@@ -112,6 +112,7 @@ def _download(url, dest, timeout=TIMEOUT, chunk_size=CHUNK_SIZE):
     dest = os.path.abspath(dest)
 
     with requests.get(url, stream=True, timeout=timeout) as r:
+        r.raise_for_status()
         with open(dest, 'w+b') as data:
             for chunk in r.iter_content(chunk_size=chunk_size):
                 data.write(chunk)
