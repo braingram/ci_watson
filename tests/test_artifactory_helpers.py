@@ -13,7 +13,6 @@ from ci_watson.artifactory_helpers import (
     check_url, compare_outputs, generate_upload_params, generate_upload_schema)
 
 
-@pytest.mark.bigdata
 @pytest.mark.parametrize(
     ('val', 'ans'),
     [('/local/path', False),
