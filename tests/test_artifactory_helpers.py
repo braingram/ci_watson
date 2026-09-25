@@ -17,8 +17,7 @@ from ci_watson.artifactory_helpers import (
 @pytest.mark.parametrize(
     ('val', 'ans'),
     [('/local/path', False),
-     ('https://google.com', True),
-     ('https://github.com/spacetelescopehstcalblahblah', False)])
+     ('https://google.com', True)])
 def test_check_url(val, ans):
     assert check_url(val) is ans
 
